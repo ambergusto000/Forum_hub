@@ -53,57 +53,7 @@ Edit
 - MySQL (porta padrão `3306`)
 - Maven
 
-### 📥 Passos
 
-1. **Clone o repositório**
-```bash
-git clone https://github.com/ambergusto000/Forum_hub.git
-cd Forum_hub
-Configure o banco de dados
-Crie um banco no MySQL chamado forum_hub e ajuste o arquivo:
-
-css
-Copy
-Edit
-src/main/resources/application.properties
-Exemplo:
-
-properties
-Copy
-Edit
-spring.datasource.url=jdbc:mysql://localhost:3306/forum_hub
-spring.datasource.username=root
-spring.datasource.password=sua_senha
-api.security.token.secret=sua_chave_secreta
-Execute a aplicação
-
-bash
-Copy
-Edit
-mvn spring-boot:run
-
-
-🔐 Autenticação com JWT
-Endpoint de login: POST /auth/login
-
-Corpo da requisição:
-
-json
-Copy
-Edit
-{
-  "login": "usuario",
-  "senha": "senha"
-}
-Resposta:
-
-json
-Copy
-Edit
-{
-  "token": "seu_token_jwt"
-}
-Uso do token nas requisições protegidas:
 
 makefile
 Copy
