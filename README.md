@@ -40,13 +40,9 @@ Inclui autenticação via **JWT**, documentação com **Swagger**, e versionamen
 As migrations estão localizadas em:
 src/main/resources/db/migration/
 
-yaml
-Copy
-Edit
 
 ---
 
-## 🛠️ Como Executar o Projeto Localmente
 
 ### ✅ Pré-requisitos
 - Java 21+
@@ -55,7 +51,4 @@ Edit
 
 
 
-makefile
-Copy
-Edit
-Authorization: Bearer seu_token_jwt
+
