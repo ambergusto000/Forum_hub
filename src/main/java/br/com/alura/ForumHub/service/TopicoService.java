@@ -24,21 +24,7 @@ public class TopicoService {
     @Autowired
     private UsuarioService usuarioService;
 
-    /**
-     * Cria um novo tópico no sistema.
-     *
-     * Etapas:
-     *  Verifica se já existe um tópico com o mesmo título e mensagem para evitar duplicidade
-     *  Recupera o usuário autenticado e persistido no banco de dados
-     *  Cria a instância do tópico associando o autor e o curso
-     *  Salva o tópico no banco de dados
-     *  Retorna o tópico criado (com ID gerado)
-     *
-     *  dadosPostTopico DTO com os dados do novo tópico
-     *  usuarioAutenticado Usuário autenticado, extraído do token JWT
-     *  retorna o tópico criado e persistido
-     *  retorna ValidacaoException se já existir um tópico igual
-     */
+
 
     public TopicoResponseDTO criarTopico(TopicoRequestDTO topicoRequestDTO, @AuthenticationPrincipal Usuario usuarioAutenticado) {
         validarTopicoDuplicado(topicoRequestDTO);
@@ -66,12 +52,7 @@ public class TopicoService {
     }
 
 
-    /**
-     * Lista os tópicos de forma paginada.
-     * Usa o Pageable para controlar página, tamanho e ordenação.
-     * Atenção: o mét0do findTop10ByOrderByCriacaoAsc limita sempre a 10 resultados,
-     * mesmo que o parâmetro 'size' seja maior.
-     */
+
     public Page<TopicoResponseDTO> listar(Pageable paginacao) {
         Page<Topico> topicos = buscarTop10PorOrdemDeCriacao(paginacao);
         return topicos.map(TopicoResponseDTO::new);
